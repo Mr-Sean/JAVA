@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Project Manager Dashboard</title>
+</head>
+<body>
+<h1>Welcome, ${thisUser.name}</h1>
+<h2>TV Shows</h2>
+<table>
+<tr>
+<th>Show</th>
+<th>Network</th>
+</tr>
+<tbody>
+<c:forEach items="${allIdeas}" var="idea">
+<tr>
+<td><a href="/details/${idea.id}">${idea.iText}</a></td>
+<td>${idea.user.name}</td>
+</tr>
+</c:forEach>
+
+</tbody>
+
+</table>
+
+<p><a href="/new">NEW</a><p>
+
+</body>
+</html>

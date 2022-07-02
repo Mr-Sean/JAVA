@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit</title>
+</head>
+<body>
+<h1>Edit Idea</h1>
+
+<form:form action="/ideas/${thisIdea.id}" method="post" modelAttribute="idea">
+
+</form:form>
+
+<p><a href="/edit/${idea.iText}">Edit</a>
+<form method="POST" action="/delete/${thisIdea.iText}">
+<input type="hidden" name="_method" value="delete">
+<button>Delete</button>
+</form>
+</body>
+</html>
